@@ -8,35 +8,56 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* BeanDNA — warm artisan café palette */
+    --background: 38 38% 94%;          /* warm cream */
+    --foreground: 22 35% 15%;          /* deep mocha */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 38 42% 97%;
+    --card-foreground: 22 35% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 38 42% 97%;
+    --popover-foreground: 22 35% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 22 45% 18%;             /* dark roast */
+    --primary-foreground: 38 50% 96%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 32 30% 88%;           /* milky beige */
+    --secondary-foreground: 22 45% 18%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 34 25% 87%;
+    --muted-foreground: 25 15% 38%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 36 65% 52%;              /* coffee gold / caramel */
+    --accent-foreground: 22 45% 12%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 12 70% 45%;
+    --destructive-foreground: 38 50% 96%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 30 25% 80%;
+    --input: 30 25% 80%;
+    --ring: 36 65% 52%;
 
-    --radius: 0.5rem;
+    --radius: 1.25rem;
+
+    /* Brand extras */
+    --cream: 38 50% 96%;
+    --espresso: 22 50% 10%;
+    --mocha: 22 35% 22%;
+    --caramel: 32 75% 55%;
+    --gold: 38 70% 58%;
+    --sage: 95 18% 55%;
+    --terracotta: 14 60% 55%;
+
+    --gradient-warm: linear-gradient(135deg, hsl(38 50% 96%) 0%, hsl(34 45% 88%) 100%);
+    --gradient-roast: linear-gradient(135deg, hsl(22 50% 18%) 0%, hsl(18 60% 25%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(36 75% 58%) 0%, hsl(28 70% 48%) 100%);
+
+    --shadow-soft: 0 4px 20px -4px hsl(22 35% 15% / 0.08);
+    --shadow-warm: 0 20px 50px -20px hsl(22 50% 15% / 0.25);
+    --shadow-glow: 0 0 60px hsl(36 75% 58% / 0.35);
+
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +77,25 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --background: 22 30% 8%;
+    --foreground: 38 40% 92%;
+    --card: 22 28% 12%;
+    --card-foreground: 38 40% 92%;
+    --popover: 22 28% 12%;
+    --popover-foreground: 38 40% 92%;
+    --primary: 36 65% 58%;
+    --primary-foreground: 22 50% 10%;
+    --secondary: 22 20% 18%;
+    --secondary-foreground: 38 40% 92%;
+    --muted: 22 18% 18%;
+    --muted-foreground: 32 15% 65%;
+    --accent: 36 70% 55%;
+    --accent-foreground: 22 50% 10%;
+    --destructive: 12 70% 50%;
+    --destructive-foreground: 38 40% 92%;
+    --border: 22 20% 22%;
+    --input: 22 20% 22%;
+    --ring: 36 65% 58%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +113,62 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body antialiased;
+    background-image: radial-gradient(ellipse at top, hsl(38 50% 96%) 0%, hsl(38 38% 94%) 60%);
+    background-attachment: fixed;
   }
+
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+
+  .font-script {
+    font-family: 'Caveat Brush', cursive;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+}
+
+@layer utilities {
+  .text-gradient-roast {
+    background: var(--gradient-roast);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .bg-grain {
+    background-image:
+      radial-gradient(circle at 1px 1px, hsl(22 35% 15% / 0.05) 1px, transparent 0);
+    background-size: 18px 18px;
+  }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-warm { box-shadow: var(--shadow-warm); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(2deg); }
+}
+@keyframes steam {
+  0% { transform: translateY(0) scaleX(1); opacity: 0.6; }
+  100% { transform: translateY(-40px) scaleX(1.4); opacity: 0; }
+}
+@keyframes scan-line {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100%); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-warm {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(36 75% 58% / 0.4); }
+  50% { box-shadow: 0 0 0 18px hsl(36 75% 58% / 0); }
 }
