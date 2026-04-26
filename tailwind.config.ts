@@ -13,6 +13,11 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ['"Caveat Brush"', 'cursive'],
+        serif: ['"Fraunces"', 'serif'],
+        body: ['"Nunito"', 'system-ui', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,6 +52,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        cream: "hsl(var(--cream))",
+        espresso: "hsl(var(--espresso))",
+        mocha: "hsl(var(--mocha))",
+        caramel: "hsl(var(--caramel))",
+        gold: "hsl(var(--gold))",
+        sage: "hsl(var(--sage))",
+        terracotta: "hsl(var(--terracotta))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -80,10 +92,30 @@ export default {
             height: "0",
           },
         },
+        "float-slow": {
+          "0%, 100%": { transform: "translateY(0) rotate(0deg)" },
+          "50%": { transform: "translateY(-12px) rotate(2deg)" },
+        },
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(20px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "pulse-warm": {
+          "0%, 100%": { boxShadow: "0 0 0 0 hsl(36 75% 58% / 0.4)" },
+          "50%": { boxShadow: "0 0 0 18px hsl(36 75% 58% / 0)" },
+        },
+        "scan-line": {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(100%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "float-slow": "float-slow 6s ease-in-out infinite",
+        "fade-up": "fade-up 0.7s cubic-bezier(0.4,0,0.2,1) both",
+        "pulse-warm": "pulse-warm 2s ease-in-out infinite",
+        "scan-line": "scan-line 2s ease-in-out infinite",
       },
     },
   },
